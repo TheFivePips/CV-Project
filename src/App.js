@@ -22,20 +22,28 @@ class App extends React.Component{
         }
 
        this.handleNameChange = this.handleNameChange.bind(this)
+       this.handleNameSubmit = this.handleNameSubmit.bind(this)
+
 
     }
     handleNameChange(e){
         this.setState({
             nameInput: e.target.value,
         })
-    
+    }
+    handleNameSubmit(e){
+        e.preventDefault()
+        this.setState({
+            name: this.state.nameInput,
+            nameInput: ''
+        })
     }
     render(){
-        const { name, nameInput, handleNameChange } = this.state
+        const { name, nameInput } = this.state
         return(
             <div className="App">
-                <Form name={name} nameInput={nameInput} handleNameChange={this.handleNameChange} />
-                <Display name={name} nameInput={nameInput}/>
+                <Form name={name} nameInput={nameInput} handleNameChange={this.handleNameChange} handleNameSubmit={this.handleNameSubmit} />
+                <Display name={name}/>
             </div>
         )
     }
