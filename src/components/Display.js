@@ -4,7 +4,8 @@ class Display extends React.Component {
     render(){
         return(
             <div>
-                Display
+                <h2>{this.props.nameInput}</h2>
+                
             </div>
         )
     }
