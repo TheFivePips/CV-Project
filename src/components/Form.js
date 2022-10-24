@@ -9,13 +9,28 @@ import "../styles/Form.css"
 class Form extends React.Component {
    
     render(){
-        const { setName } = this.props
+        const { setName, setEmail, setPhone } = this.props
         return(
-            <form className="form">
-                <General setName={setName}/>
-                <Education />
-                <Experience />
-            </form>
+            <div className="form">
+                <section >
+                    <General
+                    
+                    setName={setName} 
+                    setEmail={setEmail} 
+                    setPhone={setPhone}
+                    />
+                </section>
+
+                <section>
+                    <Education />
+                </section>
+
+                <section>
+                    <Experience />
+                </section>
+                
+                
+            </div>
         )
     }
 }

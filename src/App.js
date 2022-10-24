@@ -21,6 +21,10 @@ class App extends React.Component{
         }
 
        this.setName = this.setName.bind(this)
+       this.setEmail = this.setEmail.bind(this)
+       this.setPhone = this.setPhone.bind(this)
+
+
 
     }
     setName(string){
@@ -28,12 +32,22 @@ class App extends React.Component{
             name: string,
         })
     }
+    setEmail(string){
+        this.setState({
+            email: string,
+        })
+    }
+    setPhone(num){
+        this.setState({
+            phone: num,
+        })
+    }
     render(){
-        const { name } = this.state
+        const { name, email, phone } = this.state
         return(
             <div className="App">
-                <Form setName={this.setName}/>
-                <Display name={name}/>
+                <Form setName={this.setName} setEmail={this.setEmail} setPhone={this.setPhone}/>
+                <Display name={name} email={email} phone={phone} />
             </div>
         )
     }

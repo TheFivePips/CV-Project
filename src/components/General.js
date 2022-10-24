@@ -1,10 +1,14 @@
 import React from "react";
+import "../styles/General-form.css"
+
 
 class General extends React.Component {
     constructor(props){
         super(props)
         this.state= {
-            nameInput:''
+            nameInput:'',
+            emailInput: '',
+            phoneInput: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleNameSubmit = this.handleNameSubmit.bind(this)
@@ -18,11 +22,19 @@ class General extends React.Component {
     handleNameSubmit(e){
         e.preventDefault()
         this.props.setName(this.state.nameInput)
+        this.props.setEmail(this.state.emailInput)
+        this.props.setPhone(this.state.phoneInput)
+
+        // this.setState({
+        //     nameInput: '',
+        //     emailInput: '',
+        //     phoneInput: ''
+        // })
     }
     render(){
                 
         return(
-            <div>
+            <div className="general-form">
                 <label htmlFor="nameInput">First and Last Name: </label>
                 <input
                     type="text" 
@@ -30,6 +42,24 @@ class General extends React.Component {
                     value={this.state.nameInput}
                     id="nameInput"
                     name="nameInput">
+                </input>
+                <label htmlFor="emailInput">Email: </label>
+                <input
+                    type="email" 
+                    onChange={this.handleChange}
+                    value={this.state.emailInput}
+                    id="emailInput"
+                    name="emailInput">
+                </input>
+                <label htmlFor="phoneInput">Phone: </label>
+                <input
+                    type="tel" 
+                    onChange={this.handleChange}
+                    value={this.state.phoneInput}
+                    id="phoneInput"
+                    name="phoneInput"
+                    placeholder="###-###-####">
+                    
                 </input>
                 <button onClick={this.handleNameSubmit}>Submit</button>
                 

@@ -1,8 +1,10 @@
-.form {
-    width: 50vw;
-    height: 100vh;
+.general-form{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    padding: 20px;
+    
 }
-
+.general-form > * {
+    margin: 5px
+}

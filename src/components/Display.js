@@ -4,7 +4,10 @@ class Display extends React.Component {
     render(){
         return(
             <div>
-                <h2>{this.props.name}</h2>
+                <h1>{this.props.name}</h1>
+                <h5>{this.props.email}</h5>
+                <h5>{this.props.phone}</h5>
+
                 
             </div>
         )
