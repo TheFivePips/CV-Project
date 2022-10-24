@@ -9,10 +9,10 @@ import "../styles/Form.css"
 class Form extends React.Component {
    
     render(){
-        const { name, nameInput, handleNameChange, handleNameSubmit } = this.props
+        const { setName } = this.props
         return(
             <form className="form">
-                <General name={name} nameInput={nameInput} handleNameChange={handleNameChange} handleNameSubmit={handleNameSubmit}/>
+                <General setName={setName}/>
                 <Education />
                 <Experience />
             </form>

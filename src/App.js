@@ -8,7 +8,6 @@ class App extends React.Component{
         super(props)
 
         this.state = {
-            nameInput: '',
             name: '',
             email: '',
             phone: '',
@@ -21,28 +20,19 @@ class App extends React.Component{
             position_date: '',
         }
 
-       this.handleNameChange = this.handleNameChange.bind(this)
-       this.handleNameSubmit = this.handleNameSubmit.bind(this)
-
+       this.setName = this.setName.bind(this)
 
     }
-    handleNameChange(e){
+    setName(string){
         this.setState({
-            nameInput: e.target.value,
-        })
-    }
-    handleNameSubmit(e){
-        e.preventDefault()
-        this.setState({
-            name: this.state.nameInput,
-            nameInput: ''
+            name: string,
         })
     }
     render(){
-        const { name, nameInput } = this.state
+        const { name } = this.state
         return(
             <div className="App">
-                <Form name={name} nameInput={nameInput} handleNameChange={this.handleNameChange} handleNameSubmit={this.handleNameSubmit} />
+                <Form setName={this.setName}/>
                 <Display name={name}/>
             </div>
         )
