@@ -80,7 +80,7 @@ class App extends React.Component{
     } 
     setResponsibilities(string){
         this.setState((state) => ({
-            responsibilities: [...state, string]
+            responsibilities: [...state.responsibilities, string]
         }))
     }
     setPositionDate(num){

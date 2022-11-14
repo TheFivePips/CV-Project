@@ -25,7 +25,10 @@ class Experience extends React.Component {
         this.props.setCompanyName(this.state.companyNameInput)
         this.props.setPositionTitle(this.state.positionTitleInput)
         this.props.setPositionDate(this.state.posistionDateInput)
-        this.props.setResponsibilites(this.state.responsibilitiesInput)
+        this.props.setResponsibilities(this.state.responsibilitiesInput)
+        this.setState({
+            responsibilitiesInput: ''
+        })
 
     }
     render(){
