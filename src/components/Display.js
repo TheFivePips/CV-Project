@@ -8,6 +8,10 @@ class Display extends React.Component {
                 <h5>{this.props.email}</h5>
                 <h5>{this.props.phone}</h5>
 
+                <h3>{this.props.school}</h3>
+                <h3>{this.props.title_of_study}</h3>
+                <h3>{this.props.date_of_study}</h3>
+
                 
             </div>
         )

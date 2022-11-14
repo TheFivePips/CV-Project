@@ -35,6 +35,7 @@ class General extends React.Component {
                 
         return(
             <div className="general-form">
+                <h2>General Information</h2>
                 <label htmlFor="nameInput">First and Last Name: </label>
                 <input
                     type="text" 

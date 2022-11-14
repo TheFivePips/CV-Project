@@ -9,20 +9,23 @@ import "../styles/Form.css"
 class Form extends React.Component {
    
     render(){
-        const { setName, setEmail, setPhone } = this.props
+        const { setName, setEmail, setPhone, setSchool, setTitleOfStudy, setDateOfStudy } = this.props
         return(
             <div className="form">
                 <section >
                     <General
-                    
-                    setName={setName} 
-                    setEmail={setEmail} 
-                    setPhone={setPhone}
+                        setName={setName} 
+                        setEmail={setEmail} 
+                        setPhone={setPhone}
                     />
                 </section>
 
                 <section>
-                    <Education />
+                    <Education 
+                        setSchool={setSchool}
+                        setTitleOfStudy={setTitleOfStudy}
+                        setDateOfStudy={setDateOfStudy}
+                    />
                 </section>
 
                 <section>

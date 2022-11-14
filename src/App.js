@@ -19,10 +19,14 @@ class App extends React.Component{
             responsibiliies: [],
             position_date: '',
         }
-
+        // this is the general info methods
        this.setName = this.setName.bind(this)
        this.setEmail = this.setEmail.bind(this)
        this.setPhone = this.setPhone.bind(this)
+    //    this is the Education info methods
+        this.setSchool = this.setSchool.bind(this)
+        this.setTitleOfStudy = this.setTitleOfStudy.bind(this)
+        this.setDateOfStudy = this.setDateOfStudy.bind(this)
 
 
 
@@ -42,12 +46,42 @@ class App extends React.Component{
             phone: num,
         })
     }
+
+    setSchool(string){
+        this.setState({
+            school: string,
+        })
+    } 
+    setTitleOfStudy(string){
+        this.setState({
+            title_of_study: string,
+        })
+    } 
+    setDateOfStudy(date){
+        this.setState({
+            date_of_study: date,
+        })
+    }
     render(){
-        const { name, email, phone } = this.state
+        const { name, email, phone, school, title_of_study, date_of_study } = this.state
         return(
             <div className="App">
-                <Form setName={this.setName} setEmail={this.setEmail} setPhone={this.setPhone}/>
-                <Display name={name} email={email} phone={phone} />
+                <Form 
+                setName={this.setName} 
+                setEmail={this.setEmail} 
+                setPhone={this.setPhone}
+                setSchool={this.setSchool}
+                setTitleOfStudy={this.setTitleOfStudy}
+                setDateOfStudy={this.setDateOfStudy}
+                />
+                <Display
+                 name={name} 
+                 email={email} 
+                 phone={phone} 
+                 school={school} 
+                 title_of_study={title_of_study} 
+                 date_of_study={date_of_study}  
+                 />
             </div>
         )
     }
