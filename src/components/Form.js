@@ -9,7 +9,7 @@ import "../styles/Form.css"
 class Form extends React.Component {
    
     render(){
-        const { setName, setEmail, setPhone, setSchool, setTitleOfStudy, setDateOfStudy } = this.props
+        const { setName, setEmail, setPhone, setSchool, setTitleOfStudy, setDateOfStudy, setCompanyName, setPositionTitle, setPositionDate, setResponsibilities } = this.props
         return(
             <div className="form">
                 <section >
@@ -29,7 +29,11 @@ class Form extends React.Component {
                 </section>
 
                 <section>
-                    <Experience />
+                    <Experience 
+                        setCompanyName={setCompanyName}
+                        setPositionTitle={setPositionTitle}
+                        setPositionDate={setPositionDate}
+                        setResponsibilities={setResponsibilities}/>
                 </section>
                 
                 

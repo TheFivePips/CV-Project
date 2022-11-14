@@ -1,0 +1,10 @@
+.experience-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    
+}
+.experience-form > * {
+    margin: 5px
+}

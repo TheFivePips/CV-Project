@@ -16,7 +16,7 @@ class App extends React.Component{
             date_of_study: '',
             company_name: '',
             position_title: '',
-            responsibiliies: [],
+            responsibilities: [],
             position_date: '',
         }
         // this is the general info methods
@@ -27,6 +27,12 @@ class App extends React.Component{
         this.setSchool = this.setSchool.bind(this)
         this.setTitleOfStudy = this.setTitleOfStudy.bind(this)
         this.setDateOfStudy = this.setDateOfStudy.bind(this)
+        // this is the experience info methods
+        this.setCompanyName = this.setCompanyName.bind(this)
+        this.setPositionTitle = this.setPositionTitle.bind(this)
+        this.setResponsibilities = this.setResponsibilities.bind(this)
+        this.setPositionDate = this.setPositionDate.bind(this)
+
 
 
 
@@ -62,8 +68,28 @@ class App extends React.Component{
             date_of_study: date,
         })
     }
+    setCompanyName(string){
+        this.setState({
+            company_name: string,
+        })
+    } 
+    setPositionTitle(string){
+        this.setState({
+            position_title: string,
+        })
+    } 
+    setResponsibilities(string){
+        this.setState((state) => ({
+            responsibilities: [...state, string]
+        }))
+    }
+    setPositionDate(num){
+        this.setState({
+            position_date: num,
+        })
+    }
     render(){
-        const { name, email, phone, school, title_of_study, date_of_study } = this.state
+        const { name, email, phone, school, title_of_study, date_of_study, company_name, position_title, position_date, responsibilities } = this.state
         return(
             <div className="App">
                 <Form 
@@ -73,6 +99,10 @@ class App extends React.Component{
                 setSchool={this.setSchool}
                 setTitleOfStudy={this.setTitleOfStudy}
                 setDateOfStudy={this.setDateOfStudy}
+                setCompanyName={this.setCompanyName}
+                setPositionTitle={this.setPositionTitle}
+                setResponsibilities={this.setResponsibilities}
+                setPositionDate={this.setPositionDate}
                 />
                 <Display
                  name={name} 
@@ -81,6 +111,10 @@ class App extends React.Component{
                  school={school} 
                  title_of_study={title_of_study} 
                  date_of_study={date_of_study}  
+                 company_name={company_name}
+                 position_title={position_title}
+                 position_date={position_date}
+                 responsibilities={responsibilities}
                  />
             </div>
         )
