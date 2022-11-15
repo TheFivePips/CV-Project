@@ -53,13 +53,15 @@ class Experience extends React.Component {
                     name="positionTitleInput">
                 </input>
                 <label htmlFor="responsibilitiesInput">Responsibilities: </label>
-                <input
+                <textarea
                     type="text" 
                     onChange={this.handleChange}
                     value={this.state.responsibilitiesInput}
                     id="responsibilitiesInput"
-                    name="responsibilitiesInput">
-                </input>
+                    name="responsibilitiesInput"
+                    placeholder="Separate responsibilities with a comma">
+                    
+                </textarea>
                 <label htmlFor="posistionDateInput">Years at company: </label>
                 <input
                     type="num" 

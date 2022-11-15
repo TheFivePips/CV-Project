@@ -79,8 +79,10 @@ class App extends React.Component{
         })
     } 
     setResponsibilities(string){
+        let arr = string.split(',')
         this.setState((state) => ({
-            responsibilities: [...state.responsibilities, string]
+
+            responsibilities: [...state.responsibilities, ...arr]
         }))
     }
     setPositionDate(num){
