@@ -1,8 +1,12 @@
 .form {
     width: 50vw;
-    height: 100vh;
+    height: 99%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    border: 2px solid black;
+    margin: 5px;
+    background-color:whitesmoke;
+    
 }
 
